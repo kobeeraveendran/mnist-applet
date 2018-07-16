@@ -16,7 +16,7 @@ nn_model, graph = init()
 # aux functions
 # decode img from base 64 to raw
 def convertImage(imgdata):
-    imgstr = re.search(r'base64, (.*)', str(imgdata)).group(1)
+    imgstr = re.search(r'base64,(.*)', str(imgdata)).group(1)
     
     with open('output.png', 'wb') as output:
         output.write(base64.b64decode(imgstr))
