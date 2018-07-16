@@ -37,8 +37,8 @@ model = models.Sequential([
     layers.Dense(NUM_CLASSES, activation = 'softmax')
 ])
 
-model.compile(optimizer = 'categorical_crossentropy', 
-              loss = 'rmsprop', metrics = ['accuracy'])
+model.compile(optimizer = 'rmsprop', 
+              loss = 'categorical_crossentropy', metrics = ['accuracy'])
 
 model.fit(x = train_images, y = train_labels, 
           epochs = NUM_EPOCHS, 
