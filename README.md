@@ -1,1 +1,1 @@
-mnist-applet 
+Webapp that classifies user-drawn digits, meant as practice for deploying ML models.
