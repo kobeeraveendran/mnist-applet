@@ -7,8 +7,8 @@ def init():
     loaded_json_model = json_file.read()
     json_file.close()
 
-    loaded_model = models.model_from_json(loaded_json_model)
-    loaded_model = models.load_weights('model.h5')
+    loaded_model = models.model_from_json(loaded_json_model).load_weights('model.h5')
+    # loaded_model = keras.models.Model().load_weights('model.h5')
     print('Loaded model from disk')
     loaded_model.compile(optimizer = 'rmsprop', 
                          loss = 'categorical_crossentropy', 
