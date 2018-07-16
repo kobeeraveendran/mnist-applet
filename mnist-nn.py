@@ -48,3 +48,10 @@ model.fit(x = train_images, y = train_labels,
 
 test_loss, test_acc = model.evaluate(test_images, test_labels, verbose = 0)
 print('Test accuracy: ' + str(test_acc))
+
+# save the model's configuration to avoid re-training each time
+model_json = model.to_json()
+
+with open('model_config.json', 'w') as json_file:
+    json_file.write(model_json)
+    model.save_weights('model.h5')
