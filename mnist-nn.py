@@ -1,5 +1,4 @@
-from tensorflow import keras
-import tensorflow as tf
+import keras
 from keras.datasets import mnist
 from keras import models
 from keras import layers
@@ -42,8 +41,9 @@ model = models.Sequential([
     layers.Dense(NUM_CLASSES, activation = 'softmax')
 ])
 
-model.compile(optimizer = 'rmsprop', 
-              loss = 'categorical_crossentropy', metrics = ['accuracy'])
+model.compile(optimizer = keras.optimizers.Adadelta(), 
+              loss = keras.losses.categorical_crossentropy, 
+              metrics = ['accuracy'])
 
 model.fit(x = train_images, y = train_labels, 
           epochs = NUM_EPOCHS, 
