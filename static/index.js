@@ -48,7 +48,6 @@
             context.clearRect( 0, 0, 280, 280 );
             context.fillStyle="black";
             context.fillRect(0,0,canvas.width,canvas.height);
-            location = location;
         });
         /* LINE WIDTH */
         var slider = document.getElementById("myRange");
